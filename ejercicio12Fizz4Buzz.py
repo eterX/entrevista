@@ -3,21 +3,14 @@
 # and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
 
-migen = ( x for x in range(1,101))
+for mival in range(1,101):
+    mistr=""
+    if mival % 3 == 0:
+        mistr="Fizz"
+    if mival % 5 == 0:
+        mistr+="Buzz"
 
-while True:
-    try:
-        mival=next(migen)
-        mistr=""
-        if mival % 3 == 0:
-            mistr="Fizz"
-        if mival % 5 == 0:
-            mistr+="Buzz"
-
-        if mistr != "":
-            print(mistr)
-        else:
-            print(str(mival))
-    except StopIteration: break
-    except Exception as e:
-        print("Excepción no relacionada con el generador: {}".format(e))
+    if mistr != "":
+        print(mistr)
+    else:
+        print(str(mival))

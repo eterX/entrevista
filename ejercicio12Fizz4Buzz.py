@@ -1,57 +1,21 @@
 # ---
-# Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number
-# and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+# Requerimiento_1: Write a program that prints the numbers from 1 to 100.
+# Requerimiento_1_1:But for multiples of three print "Fizz" instead of the number For numbers which are multiples of both three and five print "FizzBuzz".
+#  Requerimiento_1_2: and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+import unidad as u
+
+def ejercicio():
+    migen = ( x for x in range(1,101))
+
+    while True:
+        try:
+            mival=next(migen)
+            print(u.unidad(mival))
+        except StopIteration: break
+        except Exception as e:
+            print("Excepción no relacionada con el generador: {}".format(e))
 
 
-def unidad(mival):
-    """
-
-    return: str según enunciado
-    """
-    mistr=""
-    if mival % 3 == 0:
-        mistr="Fizz"
-    if mival % 5 == 0:
-        mistr+="Buzz"
-
-    if mistr != "":
-        result=mistr
-    else:
-        result=str(mival)
-
-    return result
-
-
-import unittests
-
-
-class prueba(unittests.TestCase):
-    def enunciado1(entrada,salida):
-        """
-        pruyeba contra multiplo de 3
-        return: bool (OK?)
-        """
-        return entrada % 3 == 0
-
-    def enunciado2(entrada,salida):
-        """
-        pruyeba contra multiplo de 5
-        return: bool (OK?)
-        """
-        return entrada % 5 == 0
-
-    def enunciado3(entrada,salida):
-        """
-        pruyeba contra número no múltiplo de (3 o 5)
-        return: bool (OK?)
-        """
-        return entrada % 5 == 0
-
-
-
-    def test_entrevista():
-
-        self.assertTrue( enunciado1(linea) && enunciado2(linea) && enunciado3(linea))
-
-
-
+if __name__ == '__main__':
+    ejercicio()
